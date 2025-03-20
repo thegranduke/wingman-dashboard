@@ -91,7 +91,7 @@ export function SearchableTable() {
       </div>
 
       {/* Table */}
-      <div className="overflow-x-auto border border-gray-200 rounded-[8px]">
+      <div className="overflow-x-auto border border-gray-200 rounded-[8px] min-h-[400px]">
         <Table className="p-4">
           <TableHeader className="border-b border-gray-200 bg-[#F9FAFB]">
             <TableRow className="text-[#FFFFFF01]">
@@ -107,7 +107,7 @@ export function SearchableTable() {
             {filteredData.length > 0 ? (
               filteredData.map((item) => (
                 <TableRow key={item.id}
-                className="transition-all  ease-in-out transform hover:bg-muted "
+                className="transition-all  ease-in-out transform hover:bg-muted border border-gray-200"
                 >
                   <TableCell className="flex gap-2 items-center"><Image alt={"product_image"} src={rimage}/>{item.productName}</TableCell>
                   <TableCell className="flex-col">{item.date}<p className="text-[12px]">{item.time}</p></TableCell>

@@ -20,17 +20,26 @@ export default function KpiCard({
   }: CardProps) 
   {
 
-  return (   
-    
-    <div className="border rounded-[20px] shadow-md p-[24px] flex flex-col gap-[8px]">
-      <div className='flex items-center gap-[8px] font-inter font-semibold text-[12px] text-[#667056]'><Icon className='inline' size={"12"} /> {title}</div>
-      <div className='text-[32px] text-[#212636]' >{content}</div>
-      <div className='font-inter text-[14px] text-[#667085] font-normal '>
-      {isIncrease ? <><TrendIcon className="inline mr-2 text-green-500 " /><span className="text-green-500"> {value}  </span><span>increase</span></>: <><TrendIcon className="inline mr-2 text-red-500" /><span className="text-red-500"> {value} </span><span>decrease</span></>}
+    return (   
+      <div className="border rounded-[20px] shadow-md p-[24px] flex flex-col gap-[8px] 
+        transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg
+        cursor-pointer hover:border-gray-300">
+        <div className='flex items-center gap-[8px] font-inter font-semibold text-[12px] text-[#667056]'>
+          <Icon className='inline' size={"12"} /> {title}
+        </div>
+        <div className='text-[32px] text-[#212636]' >{content}</div>
+        <div className='font-inter text-[14px] text-[#667085] font-normal '>
+          {isIncrease ? 
+            <><TrendIcon className="inline mr-2 text-green-500 " />
+              <span className="text-green-500"> {value}  </span>
+              <span>increase</span>
+            </> : 
+            <><TrendIcon className="inline mr-2 text-red-500" />
+              <span className="text-red-500"> {value} </span>
+              <span>decrease</span>
+            </>
+          }
+        </div>
       </div>
-      
-    </div>
-          
-       
   )
 }
